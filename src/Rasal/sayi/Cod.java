@@ -2,30 +2,41 @@ package Rasal.sayi;
 import java.util.Scanner;
 public class Cod {
 
-    public static int  power(int a, int b){
+    public static int  power(int a){
 
-        int total = 1;
+        int count = 0;
 
         for (int i = 1; i <= a; i++){
 
-        total *= b;
+            if (a % i == 0){
+
+                count++;
+
+            }
 
         }
 
-    return total;
+        if (count == 2){
+
+            System.out.println(a + " Sayısı asaldır.");
+
+        }else {
+
+            System.out.println(a + " Sayısı asal değildir.");
+
+        }
+
+        return count;
     }
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Üs değerini girin : ");
+        System.out.print("Sayıyı girin : ");
         int a = sc.nextInt();
 
-        System.out.print("Taban değerini girin : ");
-        int b = sc.nextInt();
-
-        System.out.println(power(a , b));
+        power(a);
 
     }
 }
